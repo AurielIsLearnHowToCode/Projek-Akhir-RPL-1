@@ -1,0 +1,123 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #bad0d6, #72a0ac);
+}
+.container{
+  width: 100%;
+  display: flex;
+  max-width: 850px;
+  background: #6698a6;
+  border: 1px solid rgb(93, 153, 156);
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.325);
+}
+.login{
+  width: 400px;
+}
+form{
+  width: 250px;
+  margin: 100px auto;
+  text-align: center;
+}
+.right {
+  position: relative;
+  order: -1;
+}
+
+.right img {
+  width: 400px;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px; 
+  filter: brightness(50%);
+}
+
+.right .title {
+  position: absolute; /* Menjadikan posisi absolut */
+  top: 10px; /* Jarak dari atas */
+  left: 10px; /* Jarak dari kiri */
+  color: rgb(234, 232, 232); /* Warna teks */
+  font-weight: bold; /* Ketebalan teks */
+  font-size: 24px; /* Ukuran teks */
+}
+
+.right .subtitle {
+  position: absolute; /* Menjadikan posisi absolut */
+  top: 35px; /* Jarak dari atas */
+  left: 10px; /* Jarak dari kiri */
+  color: rgb(234, 232, 232); /* Warna teks */
+  font-size: 14px; /* Ukuran teks */
+}
+.right .subtitle1 {
+  position: absolute; 
+  top: 50px;
+  left: 10px;
+  color: rgb(234, 232, 232); /* Warna teks */
+  font-size: 14px; /* Ukuran teks */
+}
+.right .subtitle2 {
+  position: absolute; 
+  top: 65px;
+  left: 10px; 
+  color: rgb(234, 232, 232); 
+  font-size: 14px;
+}
+
+form label{
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px;
+  text-align: left;
+}
+input{
+  width: 100%;
+  margin: 10px auto;;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px auto;
+  background: #9EC3CE;
+}
+select{
+  width: 50%;
+  margin: 10px auto;;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px auto solid; 
+  background: #9EC3CE;
+}
+button{
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 200px;
+  height: 45px;
+  color: azure;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 30px;
+  background: #365486;
+  display: block;
+  margin: 20px auto;
+}
