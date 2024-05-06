@@ -4,7 +4,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lilita+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="beranda-user style.css">
 
     <title>SiKelas: Website Pinjam Ruangan</title>
 </head>
@@ -13,11 +13,11 @@
     <div class="navbar">
         <div class="judul josefin-sans-text">SiKelas</div>
 
-        <ul class="buttons josefin-sans-text">
-            <li><a href="#">Ruangan</a></li>
-            <li><a href="#">Pinjam</a></li>
-            <li><a href="#">Tentang</a></li>
-            <li><a href="#">Pengguna</a><span class="solar--user-circle-bold"></span></li>
+        <ul class="josefin-sans-text">
+            <li class = "buttons"><a href="#">Ruangan</a></li>
+            <li class = "buttons"><a href="#">Pinjam</a></li>
+            <li class = "buttons"><a href="#">Tentang</a></li>
+            <li class = "buttons logout"><a href="#">Pengguna</a><span class="solar--user-circle-bold"></span></li>
         </ul>
     </div>
     <div class="content">
@@ -25,9 +25,18 @@
             Selamat datang,<br>(pengguna)
         </div>
         <div class="highlight">
-            <div class="box ruang"></div>
-            <div class="box kosong"></div>
-            <div class="box pinjam"></div>
+            <div class="box ruang">
+                <div class="box-title josefin-sans-text">Jumlah Ruangan</div>
+                <div class="number josefin-sans-text">00</div>
+            </div>
+            <div class="box kosong">
+                <div class="box-title josefin-sans-text">Jumlah Ruangan Kosong</div>
+                <div class="number josefin-sans-text">00</div>
+            </div>
+            <div class="box pinjam">
+                <div class="box-title josefin-sans-text">Jumlah Ajukan Peminjaman</div>
+                <div class="number josefin-sans-text">00</div>
+            </div>
         </div>
     </div>
 </body>
