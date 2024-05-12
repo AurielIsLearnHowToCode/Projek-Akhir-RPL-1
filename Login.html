@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login_style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="right">
+      <img src="koridor.jpg" alt="">
+      <div class="title">SiKelas</div>
+      <div class="subtitle">Sistem</div>
+      <div class="subtitle1">Kepeminjaman</div>
+      <div class="subtitle2">Kelas</div>
+    </div>
+    <div class="login">
+      <form action="#">
+        <h1></h1>
+        <label for="uname"></label>
+        <input type="text" placeholder="Username" name="uname" required>
+        <label for="psw"></label>
+        <input type="password" placeholder="Password" name="psw" required>
+        <label for="role"></label>
+        <select name="role" required>
+          <option value="">Select</option>
+          <option value="student">Anggota</option>
+          <option value="teacher">Admin</option>
+        </select>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
