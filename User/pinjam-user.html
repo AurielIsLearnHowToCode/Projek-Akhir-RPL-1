@@ -22,20 +22,21 @@
     </div>
     <div class="content">
         <div class="greeting lilita-one-regular">
-            Pinjam Ruang Kelas<br>dengan Mudah
+            Pinjam Ruang Kelas<br>dengan Mudah<br>
+            <button class="status">Status Peminjaman</button>
         </div>
         <div class="form-box">
             <div class="judul-form josefin-sans-text">
                 Pinjam Ruangan
             </div>
             <form action="#">
-                <input id="nama" type="text" placeholder="nama"><br>
-                <input id="tanggal" type="date" placeholder="tanggal">
-                <input id="waktu" type="time" placeholder="waktu"><br>
-                <input id="kodeRuang" type="text" placeholder="kode ruangan">
-                <input id="namaRuang" type="text" placeholder="nama ruangan"><br>
-                <input id="noInduk" type="text" placeholder="NIM / NIP">
-                <select id="prodi" name="Prodi" size="1">
+                <input class="in single" id="nama" type="text" placeholder="nama"><br>
+                <input class="in double" id="tanggal" type="date" placeholder="tanggal" style="width: 198px">
+                <input class="in double" id="waktu" type="time" placeholder="waktu" style="width: 198px"><br>
+                <input class="in double" id="kodeRuang" type="text" placeholder="kode ruangan">
+                <input class="in double" id="namaRuang" type="text" placeholder="nama ruangan"><br>
+                <input class="in double" id="noInduk" type="text" placeholder="NIM / NIP">
+                <select class="in double" id="prodi" name="Prodi" size="1" style="width: 199px">
                     <option value="default">Prodi</option>
                     <option value="Teknik Komputer">Teknik Komputer</option>
                     <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
@@ -43,7 +44,7 @@
                     <option value="PGPAUD">PGPAUD</option>
                     <option value="PGSD">PGSD</option>
                 </select><br>
-                <input type="submit" value="Pinjam Ruangan Sekarang">
+                <input class="in single" id="kirim" type="submit" value="Pinjam Ruangan Sekarang" style="width: 404px, background-color=#83aab7">
             </form>
         </div>
     </div>

@@ -89,7 +89,20 @@ li.buttons:hover {
     font-size: 60px;
     color: white;
 }
-
+.greeting button.status {
+    padding: 10px 20px 10px 20px;
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #365486;
+    border-width: 0px;
+    color: white;
+}
+.greeting button.status:hover {
+    background-color: #274270;
+}
+/*================== Form Content ================== */
 .form-box .judul-form {
     font-size: 40px;
 }
@@ -108,3 +121,32 @@ li.buttons:hover {
 .form-box form input {
     margin-top: 30px;
 }
+.form-box form input {
+    margin-top: 15px;
+}
+input.in.single {width: 400px;}
+input.in.double {width: 195px}
+
+
+
+form .in {
+    border-width: 0px;
+    width: 170px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #83aab7;
+    color: white;
+}
+
+form .in:hover {
+    background-color: #7094a1;
+}
+form .in::placeholder {
+    padding-left: 10px;
+    color: white;
+}
+form option {
+    background-color: white;
+    color: black;
+}
+/*================== Form Content ================== */
