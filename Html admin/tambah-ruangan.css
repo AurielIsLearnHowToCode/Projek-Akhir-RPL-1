@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, #bad0d6, #7fb1bd);
+    background-size: 100% 120%;
+    min-height: 100vh;
+}
+
+.overlay {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #D2E8E7;
+    height: 60px;
+}
+
+.judul {
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+ul {
+    margin: 0px;
+    float: right;
+}
+
+.navbar ul li {
+    float: left;
+    background-color: #D2E8E7;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+li.buttons:hover {
+    background-color: #83ACB6;
+    color: white;
+}
+
+.josefin-sans-text {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.solar--user-circle-bold {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' fill-rule='evenodd' d='M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-7-3a3 3 0 1 1-6 0a3 3 0 0 1 6 0m-3 11.5a8.46 8.46 0 0 0 4.807-1.489c.604-.415.862-1.205.51-1.848C16.59 15.83 15.09 15 12 15c-3.09 0-4.59.83-5.318 2.163c-.351.643-.093 1.433.511 1.848A8.46 8.46 0 0 0 12 20.5' clip-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.number.josefin-sans-text {
+    padding-top: 75px;
+    padding-right: 20px;
+    float: right;
+    font-size: 75px;
+}
+
+.container {
+    max-width: 90%;
+    width: 90%;
+    height: 700px;
+    display: flex;
+    background: #DCF2F1;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+    margin: auto; /* Menengahkan container */
+    margin-top: 50px; /* Jarak atas dari header */
+}
+.formedit-text {
+    font-size: 24px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.content{
+    width: 400px;
+    height: 500px;
+    background-color: #FFFFFF;
+    padding:70px;
+    overflow: hidden;
+    margin: auto;
+}
+.close {
+    color: #000000; /* Warna silang */
+    font-size: 40px; /* Ukuran font silang */
+    cursor: pointer;
+    margin-left: 30px; /* Jarak antara tulisan dan silang */
+}
+input[type=text], select{
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 15px;
+    display: inline-block;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    position: relative;
+}
+select{
+    color: #3f3f3f;
+    font-family: 'Josefin Sans', sans-serif;
+}
+label[for="admin"] {
+    margin-top: 10px;
+    text-align: left;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
+}
+input[type=submit]{
+    width: 60%;
+    height: 50px;
+    margin: 15px auto;
+    background-color: #466599;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+}
+input[type=submit]:hover{
+    background-color: #6386c2;
+}
+.input-control{
+    padding:2px 10px ;
+    font-size: 14px;
+    margin: 5px 0;
+}
