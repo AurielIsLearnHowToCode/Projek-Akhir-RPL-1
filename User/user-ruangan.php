@@ -1,6 +1,15 @@
 <?php 
     session_start();
-    include "../service/database.php"
+    include "../service/database.php";
+
+    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    header("Pragma: no-cache"); // HTTP 1.0.
+    header("Expires: 0"); // Proxies.
+
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        header('Location: ../login.php'); // Redirect ke halaman login jika tidak ada session login
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +25,13 @@
 <body>
     <div class="overlay"></div>
     <div class="navbar">
-        <div class="judul josefin-sans-text">SiKelas</div>
+        <div class="judul josefin-sans-text"><a href="beranda-user.php">SiKelas</a></div>
 
         <ul class="josefin-sans-text">
             <li class = "buttons"><a href="user-ruangan.php">Ruangan</a></li>
             <li class = "buttons"><a href="pinjam-user.php">Pinjam</a></li>
-            <li class = "buttons"><a href="tentang-user.html">Tentang</a></li>
-            <li class = "buttons logout"><a href="#">Pengguna</a><span class="solar--user-circle-bold"></span></li>
+            <li class = "buttons"><a href="tentang-user.php">Tentang</a></li>
+            <li class = "buttons logout"><a href="#"><?php echo $_SESSION['username']?></a><span class="solar--user-circle-bold"></span></li>
         </ul>
     </div>
     <div class="container">    
@@ -42,12 +51,91 @@
                             <th>Lokasi Gedung</th>
                             <th>Status</th>
                         </tr>
+                        <?php
+                            // <---------------------------- Output Kelas ---------------------------->
+                            $sql1 = "SELECT * FROM ruangan_kelas";
+                            $result = mysqli_query($db, $sql1);
+                            
+                            while($kelas = mysqli_fetch_assoc($result)){
+                                echo "<tr>";
+                                echo "<td>".$kelas['kode']."</td>";
+                                echo "<td>".$kelas['nama']."</td>";
+                                echo "<td>Kelas</td>";
+                                echo "<td>".$kelas['lokasi']."</td>";
+
+                                $sql2 = "SELECT count(*) as 'ada' FROM peminjaman_ruangan WHERE kode_ruangan = ".$kelas['kode'];
+                                $hasil = mysqli_query($db, $sql2); // Cek ada yang pinjam apa enggak    
+                                $isExist = mysqli_fetch_assoc($hasil);
+
+                                if($isExist['ada'] == 0){
+                                    echo "<td>Tersedia</td>";
+                                }else{
+                                    echo "<td>Tidak Tersedia</td>";
+                                }
+
+                                
+                                echo "</tr>";
+                            }
+
+                            // <---------------------------- Output Lab ---------------------------->
+                            $sql3 = "SELECT * FROM ruangan_lab";
+                            $result = mysqli_query($db, $sql3);
+                            
+                            while($lab = mysqli_fetch_assoc($result)){
+                                echo "<tr>";
+                                echo "<td>".$lab['kode']."</td>";
+                                echo "<td>".$lab['nama']."</td>";
+                                echo "<td>Laboratorium</td>";
+                                echo "<td>".$lab['lokasi']."</td>";
+
+                                $sql4 = "SELECT count(*) as 'ada' FROM peminjaman_ruangan WHERE kode_ruangan = ".$lab['kode'];
+                                $hasil = mysqli_query($db, $sql4); // Cek ada yang pinjam apa enggak
+                                $isExist = mysqli_fetch_assoc($hasil);
+
+                                if($isExist['ada'] == 0){
+                                    echo "<td>Tersedia</td>";
+                                }else{
+                                    echo "<td>Tidak Tersedia</td>";
+                                }
+
+                                
+                                echo "</tr>";
+                            }
+                        ?>
                         <tr>
-                            <td>I3-2</td>
-                            <td>Ruangan I3-2</td>
-                            <td>Kelas</td>
-                            <td>Gedung I</td>
-                            <td>Tersedia</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td></td>

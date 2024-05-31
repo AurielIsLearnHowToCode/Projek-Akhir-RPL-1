@@ -19,6 +19,7 @@
         if($result->num_rows > 0){
             $_SESSION['loggedin'] = true; // Menyimpan status login di session
             $_SESSION['username'] = $hasil['username']; // Menyimpan username di session jika diperlukan
+            $_SESSION['nomin'] = $hasil['nomin'];
 
             if($role == "murid"){
             header("location: User/beranda-user.php");

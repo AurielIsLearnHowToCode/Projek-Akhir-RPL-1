@@ -1,6 +1,15 @@
 <?php 
     session_start();
-    include "../service/database.php"
+    include "../service/database.php";
+
+    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    header("Pragma: no-cache"); // HTTP 1.0.
+    header("Expires: 0"); // Proxies.
+
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        header('Location: ../login.php'); // Redirect ke halaman login jika tidak ada session login
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +25,12 @@
 <body>
     <div class="overlay"></div>
     <div class="navbar">
-        <div class="judul josefin-sans-text">SiKelas</div>
+        <div class="judul josefin-sans-text"><a href="beranda-user.php">SiKelas</a></div>
 
         <ul class="josefin-sans-text">
             <li class = "buttons"><a href="user-ruangan.php">Ruangan</a></li>
             <li class = "buttons"><a href="pinjam-user.php">Pinjam</a></li>
-            <li class = "buttons"><a href="tentang-user.html">Tentang</a></li>
+            <li class = "buttons"><a href="tentang-user.php">Tentang</a></li>
             <li class = "buttons logout"><a href="#"><?php echo $_SESSION['username']?></a><span class="solar--user-circle-bold"></span></li>
         </ul>
     </div>
