@@ -154,9 +154,10 @@ button{
     padding: 15px;
 }
 .table-container {
+    overflow: visible;
+    display: grid;
     justify-content: space-between;
-    overflow: auto;
-} 
+}
 table {
     border-collapse: collapse;
 }

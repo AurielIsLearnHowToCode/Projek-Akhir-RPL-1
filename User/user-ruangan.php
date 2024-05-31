@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    include "../service/database.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +19,9 @@
         <div class="judul josefin-sans-text">SiKelas</div>
 
         <ul class="josefin-sans-text">
-            <li class = "buttons"><a href="#">Ruangan</a></li>
-            <li class = "buttons"><a href="#">Pinjam</a></li>
-            <li class = "buttons"><a href="#">Tentang</a></li>
+            <li class = "buttons"><a href="user-ruangan.php">Ruangan</a></li>
+            <li class = "buttons"><a href="pinjam-user.php">Pinjam</a></li>
+            <li class = "buttons"><a href="tentang-user.html">Tentang</a></li>
             <li class = "buttons logout"><a href="#">Pengguna</a><span class="solar--user-circle-bold"></span></li>
         </ul>
     </div>

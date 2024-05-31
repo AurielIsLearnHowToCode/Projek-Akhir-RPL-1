@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
+    overflow-y: clip;
   }
 body {
     margin: 0px;
@@ -123,13 +124,13 @@ h1{
     margin: 10px;
     margin-bottom: 0px;
 }
-button{
+button {
     border: none;
     outline: none;
     padding: 8px;
     width: 150px;
     height: 45px;
-    color: rgb(0, 0, 0);
+    color: rgb(255 255 255);
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
@@ -137,7 +138,7 @@ button{
     margin: 20px;
     margin-top: 10px;
     margin-bottom: 0px;
-  }
+}
 .row {
     display: flex;
     margin-left: 10px;
@@ -155,7 +156,7 @@ table {
     border-collapse: collapse;
 }
 .table1{
-    width: 160%;
+    width: 146%;
     text-align: center;
 }
 .table2 {
@@ -163,8 +164,7 @@ table {
     text-align: left;
     position: absolute;
     top: 226px;
-    right: 150px
-
+    right: 81px;
 }
 th, td {
     border: none;
@@ -208,7 +208,7 @@ td{
 .search-container {
     position: absolute;
     top: 170px;
-    right: 100px;
+    right: 60px;
     margin: 10px;
     display: right;
     align-items: center;
@@ -216,7 +216,7 @@ td{
 
 #searchInput {
     padding: 8px;
-    width: 350px;
+    width: 302px;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-right: 10px;
