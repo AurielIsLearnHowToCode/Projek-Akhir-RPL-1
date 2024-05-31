@@ -41,7 +41,6 @@
                             <th>Jenis Ruangan</th>
                             <th>Lokasi Gedung</th>
                             <th>Status</th>
-                            <th>Alat</th>
                         </tr>
                         <tr>
                             <td>I3-2</td>
@@ -49,18 +48,8 @@
                             <td>Kelas</td>
                             <td>Gedung I</td>
                             <td>Tersedia</td>
-                            <td><e type="edt">Edit</e><b type="dlt">Delete</b></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>Lab Robotik</td>
-                            <td>Laboratorium</td>
-                            <td>Gedung I</td>
-                            <td>Tidak tersedia</td>
-                            <td><e type="edt">Edit</e><b type="dlt">Delete</b></td>
-                        </tr>
-                        <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -73,18 +62,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -97,18 +76,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -121,10 +90,22 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td></td>
                             <td></td>
                             <td></td>
