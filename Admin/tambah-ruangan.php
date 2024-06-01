@@ -1,3 +1,17 @@
+<?php 
+    session_start();
+    include "../service/database.php";
+
+    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    header("Pragma: no-cache"); // HTTP 1.0.
+    header("Expires: 0"); // Proxies.
+
+    if ((!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) && ($_SESSION['role'] == "murid")) {
+        header('Location: ../login.php'); // Redirect ke halaman login jika tidak ada session login
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +28,9 @@
         <div class="judul josefin-sans-text">SiKelas</div>
 
         <ul class="josefin-sans-text">
-            <li class="buttons"><a href="#">Ruangan</a></li>
-            <li class="buttons"><a href="#">Pinjam</a></li>
-            <li class="buttons logout"><a href="#">Admin</a><span class="solar--user-circle-bold"></span></li>
+            <li class = "buttons"><a href="Beranda-admin.php">Ruangan</a></li>
+            <li class = "buttons"><a href="Peminjaman.php">Pinjam</a></li>
+            <li class = "buttons logout"><a href="#"><?php echo $_SESSION['username'] ?></a><span class="solar--user-circle-bold"></span></li>
         </ul>
     </div>
     <div class="container">

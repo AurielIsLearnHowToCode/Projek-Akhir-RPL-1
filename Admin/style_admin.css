@@ -128,7 +128,7 @@ button {
     border: none;
     outline: none;
     padding: 8px;
-    width: 150px;
+    width: 185px;
     height: 45px;
     color: rgb(255 255 255);
     font-size: 16px;
@@ -155,8 +155,8 @@ button {
 table {
     border-collapse: collapse;
 }
-.table1{
-    width: 146%;
+.table1 {
+    width: 180%;
     text-align: center;
 }
 .table2 {

@@ -20,6 +20,7 @@
             $_SESSION['loggedin'] = true; // Menyimpan status login di session
             $_SESSION['username'] = $hasil['username']; // Menyimpan username di session jika diperlukan
             $_SESSION['nomin'] = $hasil['nomin'];
+            $_SESSION['role'] = $role;
 
             if($role == "murid"){
             header("location: User/beranda-user.php");

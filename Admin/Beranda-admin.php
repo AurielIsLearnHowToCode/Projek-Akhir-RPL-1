@@ -6,7 +6,7 @@
     header("Pragma: no-cache"); // HTTP 1.0.
     header("Expires: 0"); // Proxies.
 
-    if ((!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) && ($_SESSION['role'] == "guru")) {
+    if ((!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) && ($_SESSION['role'] == "murid")) {
         header('Location: ../login.php'); // Redirect ke halaman login jika tidak ada session login
         exit;
     }
@@ -18,28 +18,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lilita+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="user-ruangan.css">
+    <link rel="stylesheet" href="style_admin.css">
 
     <title>SiKelas: Website Pinjam Ruangan</title>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="navbar">
-        <div class="judul josefin-sans-text"><a href="beranda-user.php">SiKelas</a></div>
+        <div class="judul josefin-sans-text">SiKelas</div>
 
         <ul class="josefin-sans-text">
-            <li class = "buttons"><a href="user-ruangan.php">Ruangan</a></li>
-            <li class = "buttons"><a href="pinjam-user.php">Pinjam</a></li>
-            <li class = "buttons"><a href="tentang-user.php">Tentang</a></li>
-            <li class = "buttons logout"><a href="#"><?php echo $_SESSION['username']?></a><span class="solar--user-circle-bold"></span></li>
+            <li class = "buttons"><a href="Beranda-admin.php">Ruangan</a></li>
+            <li class = "buttons"><a href="Peminjaman.php">Pinjam</a></li>
+            <li class = "buttons logout"><a href="#"><?php echo $_SESSION['username'] ?></a><span class="solar--user-circle-bold"></span></li>
         </ul>
-    </div>
-    <div class="container">    
+        </div>
+<div class="container">    
         <div class="daftar">
             <h1><span class="ruangan"></span>Daftar Ruangan</h1>
+            <button type="submit"><a href="tambah-ruangan.php">Tambah Ruangan</a></button>
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Cari...">
             </div>
+            <script>
+                document.getElementById('searchInput').addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter') {
+                        document.getElementById('searchInput').submit();
+                    }
+                });
+            </script>
             <div class="row">
                 <div class="column">
                     <div class="table-container">
@@ -50,6 +57,7 @@
                             <th>Jenis Ruangan</th>
                             <th>Lokasi Gedung</th>
                             <th>Status</th>
+                            <th>Alat</th>
                         </tr>
                         <?php
                             // <---------------------------- Output Kelas ---------------------------->
@@ -72,6 +80,7 @@
                                 }else{
                                     echo "<td>Tidak Tersedia</td>";
                                 }
+                                echo "<td><e type='edt'>Edit</e><b type='dlt'>Delete</b></td>";
 
                                 
                                 echo "</tr>";
@@ -97,6 +106,7 @@
                                 }else{
                                     echo "<td>Tidak Tersedia</td>";
                                 }
+                                echo "<td><e type='edt'>Edit</e><b type='dlt'>Delete</b></td>";
 
                                 
                                 echo "</tr>";
@@ -108,22 +118,10 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -136,22 +134,10 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -164,22 +150,10 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -192,8 +166,34 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td></td>
                         </tr>
                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -209,23 +209,32 @@
                     <tr>
                         <td>Lokasi Ruangan:
                                 <select id="lokasiRuangan">
-                                    <option value=""></option>
-                                    <option value="gedungC">Gedung Biru</option>
-                                    <option value="gedungA">Gedung I</option>
-                                    <option value="gedungB">Gedung Baru</option>
+                                    <option value="">Pilih</option>
+                                    <?php
+                                        $sql1 = "SELECT lokasi FROM ruangan_lab";
+                                        $result = mysqli_query($db, $sql1);
+                                        while($hasil_lab = mysqli_fetch_assoc($result)){
+                                            echo "<option value=".$hasil_lab['lokasi'].">".$hasil_lab['lokasi']."</option>";
+                                        }
+
+                                        $sql2 = "SELECT lokasi FROM ruangan_kelas";
+                                        $result = mysqli_query($db, $sql2);
+                                        while($hasil_kelas = mysqli_fetch_assoc($result)){
+                                            echo "<option value=".$hasil_lab['lokasi'].">".$hasil_lab['lokasi']."</option>";
+                                        }
+                                    ?>
                                 </select>
                         </td>
                     </tr>
                     <tr>
                         <td>Jenis Ruangan:
                             <select id="jenisRuangan">
-                                <option value=""></option>
+                                <option value="">Pilih</option>
                                 <option value="kelas">Kelas</option>
                                 <option value="laboratorium">Laboratorium</option>
-                                <option value="aula">Aula</option>
                             </select></td>
                     </tr>
-                </table>
+                            </table>
                           </div>
                         </div>
                 </div>

@@ -6,7 +6,7 @@
     header("Pragma: no-cache"); // HTTP 1.0.
     header("Expires: 0"); // Proxies.
 
-    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    if ((!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) && ($_SESSION['role'] == "guru")) {
         header('Location: ../login.php'); // Redirect ke halaman login jika tidak ada session login
         exit;
     }
