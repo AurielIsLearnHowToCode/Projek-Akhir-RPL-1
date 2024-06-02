@@ -56,24 +56,30 @@
                             $sql1 = "SELECT * FROM ruangan_kelas";
                             $result = mysqli_query($db, $sql1);
                             
-                            while($kelas = mysqli_fetch_assoc($result)){
+                            while ($kelas = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>".$kelas['kode']."</td>";
                                 echo "<td>".$kelas['nama']."</td>";
                                 echo "<td>Kelas</td>";
                                 echo "<td>".$kelas['lokasi']."</td>";
-
-                                $sql2 = "SELECT count(*) as 'ada' FROM peminjaman_ruangan WHERE kode_ruangan = ".$kelas['kode'];
-                                $hasil = mysqli_query($db, $sql2); // Cek ada yang pinjam apa enggak    
-                                $isExist = mysqli_fetch_assoc($hasil);
-
-                                if($isExist['ada'] == 0){
-                                    echo "<td>Tersedia</td>";
-                                }else{
-                                    echo "<td>Tidak Tersedia</td>";
+                            
+                                // Properly quote 'kode_ruangan' if it is a string
+                                $kode_ruangan = mysqli_real_escape_string($db, (int)$kelas['kode']);
+                                $sql2 = "SELECT count(*) as ada FROM peminjaman_ruangan WHERE kode_ruangan = '".$kelas['kode']."'";
+                                $hasil = mysqli_query($db, $sql2);
+                            
+                                // Check if the query execution was successful
+                                if ($hasil) {
+                                    $row = mysqli_fetch_assoc($hasil); // Fetch the result correctly
+                                    if ($row['ada'] == 0) {
+                                        echo "<td>Tersedia</td>";
+                                    } else {
+                                        echo "<td>Tidak Tersedia</td>";
+                                    }
+                                } else {
+                                    // Handle query failure
+                                    echo "<td>Error in query</td>";
                                 }
-
-                                
                                 echo "</tr>";
                             }
 
