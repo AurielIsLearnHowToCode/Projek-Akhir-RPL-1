@@ -1,43 +1,40 @@
+
 <?php
     session_start(); // Memulai session di awal script
-    include "service/database.php";
+    include "database.php";
 
     $loginfailed = "";
     if(isset($_POST['login'])) {
         $username = $_POST['uname'];
         $password = $_POST['psw'];
         $role = $_POST['role'];
-
         // Menggunakan prepared statements untuk mencegah SQL Injection
         $stmt = $db->prepare("SELECT * FROM ".$role." WHERE nomin=? AND password=?");
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
         $result = $stmt->get_result();
-
         $hasil = $result->fetch_assoc();
 
         if($result->num_rows > 0){
             $_SESSION['loggedin'] = true; // Menyimpan status login di session
             $_SESSION['username'] = $hasil['username']; // Menyimpan username di session jika diperlukan
             $_SESSION['nomin'] = $hasil['nomin'];
-            $_SESSION['role'] = $role;
 
             if($role == "murid"){
-            header("location: User/beranda-user.php");
+            header("location: beranda-user.php");
             }elseif($role == "guru"){
-            header("location: Admin/Beranda-admin.php");
+            header("location: Beranda-admin.php");
             }
 
             exit();
         } else {
-            $loginfailed = "Akun tidak temukan";
+          echo "<script>alert('User tidak Ditemukan');</script>";
         }
-
         $stmt->close();
         $db->close();
     }
     ?>
-
+        
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,9 +58,9 @@
     </div>
         <form action="login.php" method="POST">
           <h1></h1>
-          <label for="uname">nomor induk</label>
+          <label for="uname"></label>
           <input type="text" placeholder="Username" name="uname" required>
-          <label for="psw">password</label>
+          <label for="psw"></label>
           <input type="password" placeholder="Password" name="psw" required>
           <label for="role"></label>
           <select name="role" required>
