@@ -36,7 +36,7 @@
 <div class="container">    
         <div class="daftar">
             <h1><span class="ruangan"></span>Daftar Ruangan</h1>
-            <button type="submit"><a href="tambah-ruangan.php">Tambah Ruangan</a></button>
+            <button type="submit"><a href="tambah-ruangan.php" style="color: white;">Tambah Ruangan</a></button>
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Cari...">
             </div>
@@ -64,51 +64,66 @@
                             $sql1 = "SELECT * FROM ruangan_kelas";
                             $result = mysqli_query($db, $sql1);
                             
-                            while($kelas = mysqli_fetch_assoc($result)){
+                            while ($kelas = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>".$kelas['kode']."</td>";
                                 echo "<td>".$kelas['nama']."</td>";
                                 echo "<td>Kelas</td>";
                                 echo "<td>".$kelas['lokasi']."</td>";
-
-                                $sql2 = "SELECT count(*) as 'ada' FROM peminjaman_ruangan WHERE kode_ruangan = ".$kelas['kode'];
-                                $hasil = mysqli_query($db, $sql2); // Cek ada yang pinjam apa enggak    
-                                $isExist = mysqli_fetch_assoc($hasil);
-
-                                if($isExist['ada'] == 0){
-                                    echo "<td>Tersedia</td>";
-                                }else{
-                                    echo "<td>Tidak Tersedia</td>";
+                            
+                                // Properly quote 'kode_ruangan' if it is a string
+                                $kode_ruangan = mysqli_real_escape_string($db, $kelas['kode']);
+                                $sql2 = "SELECT count(*) as ada FROM peminjaman_ruangan WHERE kode_ruangan = '$kode_ruangan'";
+                                $hasil = mysqli_query($db, $sql2);
+                            
+                                // Check if the query execution was successful
+                                if ($hasil) {
+                                    $row = mysqli_fetch_assoc($hasil); // Fetch the result correctly
+                                    if ($row['ada'] == 0) {
+                                        echo "<td>Tersedia</td>";
+                                    } else {
+                                        echo "<td>Tidak Tersedia</td>";
+                                    }
+                                } else {
+                                    // Handle query failure
+                                    echo "<td>Error in query</td>";
                                 }
+                            
                                 echo "<td><e type='edt'>Edit</e><b type='dlt'>Delete</b></td>";
-
-                                
                                 echo "</tr>";
                             }
+                            
 
                             // <---------------------------- Output Lab ---------------------------->
-                            $sql3 = "SELECT * FROM ruangan_lab";
-                            $result = mysqli_query($db, $sql3);
+                            $sql1 = "SELECT * FROM ruangan_kelas";
+                            $result = mysqli_query($db, $sql1);
                             
-                            while($lab = mysqli_fetch_assoc($result)){
+                            while ($kelas = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
-                                echo "<td>".$lab['kode']."</td>";
-                                echo "<td>".$lab['nama']."</td>";
+                                echo "<td>".$kelas['kode']."</td>";
+                                echo "<td>".$kelas['nama']."</td>";
                                 echo "<td>Laboratorium</td>";
-                                echo "<td>".$lab['lokasi']."</td>";
-
-                                $sql4 = "SELECT count(*) as 'ada' FROM peminjaman_ruangan WHERE kode_ruangan = ".$lab['kode'];
-                                $hasil = mysqli_query($db, $sql4); // Cek ada yang pinjam apa enggak
-                                $isExist = mysqli_fetch_assoc($hasil);
-
-                                if($isExist['ada'] == 0){
-                                    echo "<td>Tersedia</td>";
-                                }else{
-                                    echo "<td>Tidak Tersedia</td>";
+                                echo "<td>".$kelas['lokasi']."</td>";
+                            
+                                // Properly quote 'kode_ruangan' if it is a string
+                                $kode_ruangan = mysqli_real_escape_string($db, $kelas['kode']);
+                                $sql2 = "SELECT count(*) as ada FROM peminjaman_ruangan WHERE kode_ruangan = '$kode_ruangan'";
+                                $hasil = mysqli_query($db, $sql2);
+                            
+                                // Check if the query execution was successful
+                                if ($hasil) {
+                                    $row = mysqli_fetch_assoc($hasil); // Fetch the result correctly
+                                    if ($row['ada'] == 0) {
+                                        echo "<td>Tersedia</td>";
+                                    } else {
+                                        echo "<td>Tidak Tersedia</td>";
+                                    }
+                                } else {
+                                    // Handle query failure
+                                    echo "<td>Error in query</td>";
                                 }
+                            
                                 echo "<td><e type='edt'>Edit</e><b type='dlt'>Delete</b></td>";
-
-                                
                                 echo "</tr>";
                             }
                         ?>
@@ -206,41 +221,47 @@
                     <tr>
                         <th>Search by:</th>
                     </tr>
+                    <form action="Beranda-user.php" method="post">
                     <tr>
                         <td>Lokasi Ruangan:
-                                <select id="lokasiRuangan">
-                                    <option value="">Pilih</option>
-                                    <?php
-                                        $sql1 = "SELECT lokasi FROM ruangan_lab";
-                                        $result = mysqli_query($db, $sql1);
-                                        while($hasil_lab = mysqli_fetch_assoc($result)){
-                                            echo "<option value=".$hasil_lab['lokasi'].">".$hasil_lab['lokasi']."</option>";
-                                        }
+                            <select id="lokasiRuangan" name="lokasi">
+                                <option value="">Pilih</option>
+                                <?php
+                                    $sql1 = "SELECT lokasi FROM ruangan_lab";
+                                    $result = mysqli_query($db, $sql1);
+                                    while($hasil_lab = mysqli_fetch_assoc($result)){
+                                        echo "<option value=".$hasil_lab['lokasi'].">".$hasil_lab['lokasi']."</option>";
+                                    }
 
-                                        $sql2 = "SELECT lokasi FROM ruangan_kelas";
-                                        $result = mysqli_query($db, $sql2);
-                                        while($hasil_kelas = mysqli_fetch_assoc($result)){
-                                            echo "<option value=".$hasil_lab['lokasi'].">".$hasil_lab['lokasi']."</option>";
-                                        }
-                                    ?>
-                                </select>
+                                    $sql2 = "SELECT lokasi FROM ruangan_kelas";
+                                    $result = mysqli_query($db, $sql2);
+                                    while($hasil_kelas = mysqli_fetch_assoc($result)){
+                                        echo "<option value=".$hasil_lab['lokasi'].">".$hasil_lab['lokasi']."</option>";
+                                    }
+                                ?>
+                            </select>
                         </td>
                     </tr>
                     <tr>
                         <td>Jenis Ruangan:
-                            <select id="jenisRuangan">
+                            <select id="jenisRuangan" name="jenis">
                                 <option value="">Pilih</option>
                                 <option value="kelas">Kelas</option>
                                 <option value="laboratorium">Laboratorium</option>
-                            </select></td>
+                            </select>
+                        </td>
                     </tr>
-                            </table>
-                          </div>
-                        </div>
+                    <tr>
+                        <td>
+                            <input type="button" name="kirim" value="cari">
+                        </td>
+                    </tr>
+                    </form>
+                </table>
+                    </div>
                 </div>
-                </div>
-              </div>
+            </div>
         </div>
-    </div>
+</div>
 </body>
 </html>
