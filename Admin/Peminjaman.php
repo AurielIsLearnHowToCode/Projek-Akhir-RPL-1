@@ -52,30 +52,24 @@
                             <th>Terima/Tidak</th>
                             <th>Action</th>
                         </tr>
-                        <tr>
-                            <td>30/04/2024</td>
-                            <td>13.00-14.40</td>
-                            <td>Dzaki Fairuz Salam</td>
-                            <td>2205654</td>
-                            <td>I3-1</td>
-                            <td>Gedung I3-1</td>
-                            <td>Tekkom</td>
-                            <td>Sedang Diproses</td>
-                            <td><c type="yes">Ya</c><d type="no">Tidak</d></td>
-                            <td><e type="edt">Edit</e><b type="dlt">Delete</b></td>
-                        </tr>
-                        <tr>
-                            <td>30/04/2024</td>
-                            <td>13.00-14.40</td>
-                            <td>Muhammad Auriel</td>
-                            <td>2200168</td>
-                            <td>I3-2</td>
-                            <td>Gedung I3-2</td>
-                            <td>Tekkom</td>
-                            <td>Sedang Diproses</td>
-                            <td><c type="yes">Ya</c><d type="no">Tidak</d></td>
-                            <td><e type="edt">Edit</e><b type="dlt">Delete</b></td>
-                        </tr>
+                        <?php 
+                            $sql1 = "SELECT * FROM peminjaman_kelas";
+                            $result = mysqli_query($db, $sql1);
+                            while($pinjam = mysqli_fetch_assoc($result)){
+                                    echo "<tr>";
+                                    echo "<td>".$pinjam['tanggal']."</td>";
+                                    echo "<td>".$pinjam['waktu']."</td>"; 
+                                    echo "<td>".$pinjam['nama']."</td>";
+                                    echo "<td>".$pinjam['nim']."</td>";
+                                    echo "<td>".$pinjam['kode_ruangan']."</td>";
+                                    echo "<td>".$pinjam['nama_ruangan']."</td>";
+                                    echo "<td>".$pinjam['prodi']."</td>";
+                                    echo "<td>".$pinjam['status']."</td>";
+                                    echo "<td><c type='yes'><a href='yes-pinjam.php?id=".$pinjam["id"]."'>Ya</a></c><d type='no'><a href='no-pinjam.php?id=".$pinjam["id"]."'>Tidak</a></d></td>";
+                                    echo "<td><e type='edt'><a href='edit-peminjaman-admin.php?id=".$pinjam["id"]."'>Edit</a></e><b type='dlt'><a href='del-pinjam.php?id=".$pinjam["id"]."'>Delete</a></b></td>";
+                                    echo "</tr>";
+                            }
+                        ?>
                         <tr>
                             <td></td>
                             <td></td>

@@ -40,12 +40,12 @@
     <div class="bottom-boxes">
     </div>
     <div class="status-text">
-        <p>Halo &lt;&lt;Pengguna>></p>
-        <p>Peminjaman &lt;&lt;Ruangan Kelas>></p>
-        <p>Telah Disetujui</p>
+        <p>Halo <?php echo $_SESSION['username'] ?></p>
+        <p>Peminjaman <?php echo $_SESSION['ruangan'] ?></p>
+        <p>Sedang Diproses</p>
     </div>
 </div>
-<div class="akhir-text">
+<div class="akhir-text josefin-sans-text">
     <p>Silakan segera memasuki ruangan perkuliahan</p>
     <p>Selamat melaksanakan kegiatan pembelajaran dan terus semangat guna mencapai keberhasilan</p>
  <div class="no-text">

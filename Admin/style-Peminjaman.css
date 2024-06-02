@@ -12,6 +12,7 @@ body {
     background: linear-gradient(to top, #bad0d6,#85B4C2);
     background-size: 100% 120%;
     min-height: 100vh;
+    overflow-y: hidden;
 }
 
 .overlay {
@@ -283,6 +284,11 @@ b{
     background: #e33131;
     margin-top: 10px;
 }
+c a, d a, e a, b a{
+    color: white;
+    padding: 0px;
+}
+
 select {
     font-size: 14px;
     background: #C7C7C7;

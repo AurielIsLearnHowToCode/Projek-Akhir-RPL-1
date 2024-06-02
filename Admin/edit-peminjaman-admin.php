@@ -10,6 +10,11 @@
         header('Location: ../login.php'); // Redirect ke halaman login jika tidak ada session login
         exit;
     }
+
+
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,18 +40,19 @@
     </div>
     <div class="container">
         <div class="content">
-            <form action="#">
+            <form action="edit-pinjam.php" method="post">
             <div class="formedit-text">
             <p>Form Edit Status Ruangan <span class="close" id="closeButton">&times;</span></p>
             <hr>
             <label for="statuspeminjaman">Status Peminjaman</label>
+            <input type="hidden" name="id" value="<?php echo $id?>">
             <select name="status" id="statuspeminjaman">
-                <option value="select"></option>
+                <option value="">Pilih</option>
                 <option value="Tidak Disetujui">Tidak Disetujui</option>
                 <option value="Sedang Diproses">Sedang Diproses</option>
                 <option value="Disetujui">Disetujui</option>
             </select>
-            <input type="submit" value="Simpan Perubahan">
+            <input type="submit" name="kirim" value="Simpan Perubahan">
         </form>
         </div>
         </div>

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Buat ID unik untuk kolom `id`
-    $id = uniqid();
+    $id = uniqid(mt_rand(), true);
 
     // Pastikan `nim` adalah integer
     $nim = (int) $_POST['nomin'];
@@ -30,13 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result_kelas = mysqli_query($db, $query_kelas);
     $result_lab = mysqli_query($db, $query_lab);
     
+    $_SESSION['ruangan'] = $nama_ruangan;
+
     if (mysqli_num_rows($result_kelas) > 0 || mysqli_num_rows($result_lab) > 0) {
         // Prepared statement to prevent SQL injection
-        $stmt = $db->prepare("INSERT INTO peminjaman_kelas (id, nama, nim, tanggal, waktu, prodi, kode_ruangan, nama_ruangan) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $db->prepare("INSERT INTO peminjaman_kelas (id, nama, nim, tanggal, waktu, prodi, kode_ruangan, nama_ruangan, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Sedang Diproses')");
         $stmt->bind_param("ssisssss", $id, $_POST['nama'], $nim, $_POST['tanggal'], $_POST['waktu'], $_POST['prodi'], $kode_ruangan, $nama_ruangan);
         
         if ($stmt->execute()) {
             echo "<script>alert('Peminjamanmu sudah diusulkan ke admin');</script>";
+            header("Location: status-user.php");
         } else {
             echo 'error: '.mysqli_error($db);
         }

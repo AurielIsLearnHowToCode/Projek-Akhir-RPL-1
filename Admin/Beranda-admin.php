@@ -72,7 +72,7 @@
                                 echo "<td>".$kelas['lokasi']."</td>";
                             
                                 // Properly quote 'kode_ruangan' if it is a string
-                                $kode_ruangan = mysqli_real_escape_string($db, $kelas['kode']);
+                                $kode_ruangan = mysqli_real_escape_string($db, (int)$kelas['kode']);
                                 $sql2 = "SELECT count(*) as ada FROM peminjaman_ruangan WHERE kode_ruangan = '$kode_ruangan'";
                                 $hasil = mysqli_query($db, $sql2);
                             
@@ -95,37 +95,37 @@
                             
 
                             // <---------------------------- Output Lab ---------------------------->
-                            $sql1 = "SELECT * FROM ruangan_kelas";
-                            $result = mysqli_query($db, $sql1);
+                            // $sql1 = "SELECT * FROM ruangan_kelas";
+                            // $result = mysqli_query($db, $sql1);
                             
-                            while ($kelas = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                echo "<td>".$kelas['kode']."</td>";
-                                echo "<td>".$kelas['nama']."</td>";
-                                echo "<td>Laboratorium</td>";
-                                echo "<td>".$kelas['lokasi']."</td>";
+                            // while ($kelas = mysqli_fetch_assoc($result)) {
+                            //     echo "<tr>";
+                            //     echo "<td>".$kelas['kode']."</td>";
+                            //     echo "<td>".$kelas['nama']."</td>";
+                            //     echo "<td>Laboratorium</td>";
+                            //     echo "<td>".$kelas['lokasi']."</td>";
                             
-                                // Properly quote 'kode_ruangan' if it is a string
-                                $kode_ruangan = mysqli_real_escape_string($db, $kelas['kode']);
-                                $sql2 = "SELECT count(*) as ada FROM peminjaman_ruangan WHERE kode_ruangan = '$kode_ruangan'";
-                                $hasil = mysqli_query($db, $sql2);
+                            //     // Properly quote 'kode_ruangan' if it is a string
+                            //     $kode_ruangan = mysqli_real_escape_string($db, $kelas['kode']);
+                            //     $sql2 = "SELECT count(*) as ada FROM peminjaman_ruangan WHERE kode_ruangan = '$kode_ruangan'";
+                            //     $hasil = mysqli_query($db, $sql2);
                             
-                                // Check if the query execution was successful
-                                if ($hasil) {
-                                    $row = mysqli_fetch_assoc($hasil); // Fetch the result correctly
-                                    if ($row['ada'] == 0) {
-                                        echo "<td>Tersedia</td>";
-                                    } else {
-                                        echo "<td>Tidak Tersedia</td>";
-                                    }
-                                } else {
-                                    // Handle query failure
-                                    echo "<td>Error in query</td>";
-                                }
+                            //     // Check if the query execution was successful
+                            //     if ($hasil) {
+                            //         $row = mysqli_fetch_assoc($hasil); // Fetch the result correctly
+                            //         if ($row['ada'] == 0) {
+                            //             echo "<td>Tersedia</td>";
+                            //         } else {
+                            //             echo "<td>Tidak Tersedia</td>";
+                            //         }
+                            //     } else {
+                            //         // Handle query failure
+                            //         echo "<td>Error in query</td>";
+                            //     }
                             
-                                echo "<td><e type='edt'>Edit</e><b type='dlt'>Delete</b></td>";
-                                echo "</tr>";
-                            }
+                            //     echo "<td><e type='edt'>Edit</e><b type='dlt'>Delete</b></td>";
+                            //     echo "</tr>";
+                            // }
                         ?>
                         <tr>
                             <td></td>

@@ -1,7 +1,7 @@
 
 <?php
     session_start(); // Memulai session di awal script
-    include "database.php";
+    include "service/database.php";
 
     $loginfailed = "";
     if(isset($_POST['login'])) {
@@ -21,9 +21,9 @@
             $_SESSION['nomin'] = $hasil['nomin'];
 
             if($role == "murid"){
-            header("location: beranda-user.php");
+            header("location: User/beranda-user.php");
             }elseif($role == "guru"){
-            header("location: Beranda-admin.php");
+            header("location: Admin/Beranda-admin.php");
             }
 
             exit();
