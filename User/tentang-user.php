@@ -30,7 +30,7 @@
         <div class="judul josefin-sans-text"><a href="beranda-user.php">SiKelas</a></div>
 
         <ul class="josefin-sans-text">
-            <li class = "buttons"><a href="user-ruangan.php">Ruangan</a></li>
+            <li class = "buttons"><a href="user-ruangan.php?filter=">Ruangan</a></li>
             <li class = "buttons"><a href="pinjam-user.php">Pinjam</a></li>
             <li class = "buttons"><a href="tentang-user.php">Tentang</a></li>
             <li class = "buttons logout"><a href="#"><?php echo $_SESSION['username'] ?></a><span class="solar--user-circle-bold"></span></li>

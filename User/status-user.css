@@ -1,5 +1,9 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 body {
-    background-image: url('..Asset/upi-bg.jpg');
+    background-image: url('../Asset/upi-bg.jpg');
     background-size: 100%; 
     background-position: center 107%; 
     font-family: 'Josefin Sans', sans-serif;
