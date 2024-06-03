@@ -1,5 +1,5 @@
 body {
-    background-image: url('upi-bg.jpg');
+    background-image: url('..Asset/upi-bg.jpg');
     background-size: 100%; 
     background-position: center 107%; 
     font-family: 'Josefin Sans', sans-serif;
@@ -109,5 +109,3 @@ li.buttons:hover {
     font-size: 20px;
     line-height: 0.4;
 }
-
-
