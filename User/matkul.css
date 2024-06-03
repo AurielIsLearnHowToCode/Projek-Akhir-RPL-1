@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+  }
+/*================== Backgrounds ================== */
+body {
+    margin: 0px;
+    background: url(upi-bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: auto;
+    /* overflow: hidden; */
+}
+
+.overlay {
+    height: 120%;
+    width: 100%;
+    background-color: rgba(77, 77, 77, 0.75);
+    position: absolute;
+    z-index: -1;
+
+}
+/*================== Backgrounds ================== */
+
+/*================== Navbar ================== */
+.navbar {
+    background-color: #D2E8E7;
+    height: 60px;
+}
+
+.judul {
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+ul {
+    margin: 0px;
+    float: right;
+}
+
+.navbar ul li {
+    float: left;
+    background-color: #D2E8E7;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+li.buttons:hover {
+    background-color: #83ACB6;
+    color: white;
+}
+/*================== Navbar ================== */
+
+/*================== Import Font-Family and Icons ================== */
+.josefin-sans-text {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lilita-one-regular {
+      font-family: "Lilita One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+  .solar--user-circle-bold {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      padding-right: 10px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' fill-rule='evenodd' d='M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-7-3a3 3 0 1 1-6 0a3 3 0 0 1 6 0m-3 11.5a8.46 8.46 0 0 0 4.807-1.489c.604-.415.862-1.205.51-1.848C16.59 15.83 15.09 15 12 15c-3.09 0-4.59.83-5.318 2.163c-.351.643-.093 1.433.511 1.848A8.46 8.46 0 0 0 12 20.5' clip-rule='evenodd'/%3E%3C/svg%3E");
+    }
+/*================== Import Font-Family and Icons ================== */
+
+.container {
+    max-width: 90%;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    background: #DCF2F1;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+    margin: auto; /* Menengahkan container */
+    margin-top: 50px; /* Jarak atas dari header */
+}
+.daftar {
+    width: 400px;
+    margin: 10px left; /* Menengahkan daftar */
+}
+form {
+    width: 250px;
+    margin: 100px left; /* Menengahkan form */
+}
+.matkul {
+    display: inline-block;
+    width: 40px;    
+    height: 30px;
+    padding-right: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='black' stroke-width='4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M24 21v23c-3.291-4-13.371-4-18-4V18c9.874 0 16.114 2 18 3m0 0v23c3.291-4 13.371-4 18-4V18c-9.874 0-16.114 2-18 3'/%3E%3Ccircle cx='24' cy='12' r='8'/%3E%3C/g%3E%3C/svg%3E");
+}
+h1{
+    font-size: 30px;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.row {
+    display: flex;
+    margin-left: 10px;
+    margin-right:-5px;
+}
+  
+.column {
+    flex: 50%;
+    padding: 15px;
+}
+.table-container {
+    justify-content: space-between;
+} 
+table {
+    max-width: 100%;
+    width: 1290px;
+    margin-left: 20px;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+    border: none;
+    padding: 10px 10px; /* Tambahkan spasi di dalam batas sel */
+    font-display: auto;
+}
+th {
+    color: #FFFFFF;
+    background-color: #365486;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+td{
+    padding-top: 20px;
+	background-color: #FFFFFF;
+    padding-bottom: 20px;
+}
+.sidebar{
+    width: 1000px;
+}
+th:nth-child(1),td:nth-child(1) {
+    border-right: 2px solid grey;
+}
+th:nth-child(2), td:nth-child(2) {
+    border-right: 2px solid grey;
+}
+th:nth-child(3),td:nth-child(3) {
+    border-right: 2px solid grey;
+}
+th:nth-child(4), td:nth-child(4) {
+    border-right: 2px solid grey;
+}
+th:nth-child(5), td:nth-child(5) {
+    border-right: 2px solid grey;
+}
+th:nth-child(6), td:nth-child(6) {
+    border-right: 2px solid grey;
+}
+th:nth-child(7), td:nth-child(7){
+    border-right:2px solid grey;
+}
+th:nth-child(8), td:nth-child(8) {
+    border-right: 2px solid grey;
+}
+th:nth-child(9), td:nth-child(9) {
+    border-right: 2px solid grey;
+}

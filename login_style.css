@@ -11,7 +11,7 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #bad0d6, #72a0ac);
+  background: linear-gradient(to bottom, #bad0d6, #67a2b3);
 }
 .container{
   width: 100%;
