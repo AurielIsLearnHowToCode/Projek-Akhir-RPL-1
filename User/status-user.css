@@ -1,26 +1,20 @@
-*{
-    font-family: "Josefin Sans", sans-serif;
-  }
-/*================== Backgrounds ================== */
 body {
-    margin: 0px;
-    background: url(../Asset/upi-bg.jpg);
-    background-size: 100% 100%;
-    background-repeat: auto;
-    overflow: hidden;
+    background-image: url('..Asset/upi-bg.jpg');
+    background-size: 100%; 
+    background-position: center 107%; 
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0; 
 }
 
 .overlay {
-    height: 120%;
-    width: 100%;
     background-color: rgba(77, 77, 77, 0.75);
     position: absolute;
     z-index: -1;
-
+    height: 100%;
+    width: 100%;
 }
-/*================== Backgrounds ================== */
 
-/*================== Navbar ================== */
 .navbar {
     background-color: #D2E8E7;
     height: 60px;
@@ -54,220 +48,66 @@ a {
     color: black;
     padding: 20px;
 }
-.status-link {
-    color: #ffffff;    
-    padding:20px;
-}
+
 li.buttons:hover {
     background-color: #83ACB6;
     color: white;
 }
-/*================== Navbar ================== */
 
-/*================== Import Font-Family and Icons ================== */
 .josefin-sans-text {
-    font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
   
-  .lilita-one-regular {
-      font-family: "Lilita One", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-    
   .solar--user-circle-bold {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      padding-right: 10px;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' fill-rule='evenodd' d='M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-7-3a3 3 0 1 1-6 0a3 3 0 0 1 6 0m-3 11.5a8.46 8.46 0 0 0 4.807-1.489c.604-.415.862-1.205.51-1.848C16.59 15.83 15.09 15 12 15c-3.09 0-4.59.83-5.318 2.163c-.351.643-.093 1.433.511 1.848A8.46 8.46 0 0 0 12 20.5' clip-rule='evenodd'/%3E%3C/svg%3E");
-    }
-/*================== Import Font-Family and Icons ================== */
-
-.container {
-    max-width: 90%;
-    width: 100%;
-    height: 700px;
-    display: flex;
-    background: #DCF2F1;
-    border: none;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px; 
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px; 
-    margin: auto; /* Menengahkan container */
-    margin-top: 50px; /* Jarak atas dari header */
-}
-
-.daftar {
-    width: 400px;
-    margin: 10px left; /* Menengahkan daftar */
-}
-
-form {
-    width: 250px;
-    margin: 100px left; /* Menengahkan form */
-}
-.ruangan {
     display: inline-block;
-    width: 40px;    
-    height: 30px;
+    width: 40px;
+    height: 40px;
     padding-right: 10px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M1.998 21v-2h2V4.835a1 1 0 0 1 .821-.984l9.472-1.722a.6.6 0 0 1 .707.59v1.28l4 .001a1 1 0 0 1 1 1v14h2v2h-4V6h-3v15zm11-16.603l-7 1.272V19h7zm-1 6.603v2h-2v-2z'/%3E%3C/svg%3E")  }
-
-h1{
-    font-size: 30px;
-    margin: 10px;
-    margin-bottom: 0px;
-}
-button{
-    border: none;
-    outline: none;
-    padding: 8px;
-    width: 150px;
-    height: 45px;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    background: #5ea2b7;
-    margin: 20px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' fill-rule='evenodd' d='M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-7-3a3 3 0 1 1-6 0a3 3 0 0 1 6 0m-3 11.5a8.46 8.46 0 0 0 4.807-1.489c.604-.415.862-1.205.51-1.848C16.59 15.83 15.09 15 12 15c-3.09 0-4.59.83-5.318 2.163c-.351.643-.093 1.433.511 1.848A8.46 8.46 0 0 0 12 20.5' clip-rule='evenodd'/%3E%3C/svg%3E");
   }
-.row {
-    display: flex;
-    margin-left: 10px;
-    margin-right:-5px;
-}
-  
-.column {
-    flex: 50%;
-    padding: 15px;
-}
-.table-container {
-    width: 847px;
-    display: inline-flex;
-    height: 520px;
-    overflow-y: scroll;
-}
-table {
-    border-collapse: collapse;
-}
-.table1{
-    width: 140%;
-    text-align: center;
-}
-.table2 {
-    width: 330px;
+
+.status-text {
+    font-family: 'Jockey One', sans-serif;
+    color: white;
     text-align: left;
     position: absolute;
-    top: 240px;
-    right: 85px;
-}
-th, td {
-    border: none;
-    padding: 10px 10px; /* Tambahkan spasi di dalam batas sel */
-    font-display: auto;
-}
-th {
-    color: #FFFFFF;
-    background-color: #365486;
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-td{
-    padding-top: 20px;
-	background-color: #FFFFFF;
-    padding-bottom: 20px;
+    bottom: 220px;
+    left: 120px;
+    font-size: 60px;
+    line-height: 0.4;
 }
 
-.table1 th:nth-child(1), .table1 td:nth-child(1) {
-    border-right: 2px solid grey;
-}
-.table1 th:nth-child(2), .table1 td:nth-child(2) {
-    border-right: 2px solid grey;
-}
-.table1 th:nth-child(3), .table1 td:nth-child(3) {
-    border-right: 2px solid grey;
-}
-.table1 th:nth-child(4), .table1 td:nth-child(4) {
-    border-right: 2px solid grey;
-}
-.table1 th:nth-child(5), .table1 td:nth-child(5) {
-    border-right: 2px solid grey;
-}
-.table1 th:nth-child(6), .table1 td:nth-child(6) {
-    border-right: 2px solid grey;
-}
-.search-container {
-    position: absolute;
-    top: 165px;
-    right: 100px;
-    margin: 10px;
-    display: right;
-    align-items: center;
-}
-
-#searchInput {
-    padding: 8px;
-    width: 335px;
-    height: 50px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-right: -29px;
-}
-
-#searchButton {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    background-color: #5ea2b7;
+.akhir-text {
+    font-family: 'Josefin Sans', sans-serif;
     color: white;
-    cursor: pointer;
+    text-align: left;
+    position: absolute;
+    bottom: 175px;
+    left: 125px;
+    font-size: 20px;
+    line-height: 0.4;
 }
-/* e{
-    border: none;
-    outline: none;
-    padding: 8px;
-    width: 18px;
-    height: 12px;
-    color: rgb(0, 0, 0);
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 10px;
-    background: #E9D735;
-    margin-top: 10px;
+
+.no-text {
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    text-align: left;
+    position: absolute;
+    bottom: -50px;
+    left: -0.9px;
+    font-size: 20px;
+    line-height: 0.4;
 }
-b{
-    border: none;
-    outline: none;
-    padding: 8px;
-    width: 18px;
-    height: 12px;
-    color: rgb(0, 0, 0);
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 10px;
-    background: #e33131;
-    margin-top: 10px;
-} */
-select {
-    font-size: 14px;
-    background: #C7C7C7;
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 8px;
-    border:none;
-}
+
+
